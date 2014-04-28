@@ -4,4 +4,4 @@
 , supportedSystems ? [ "x86_64-linux" "i686-linux" "x86_64-darwin" ]
 }:
 with import "${nixpkgs}/pkgs/top-level/release-lib.nix" { inherit supportedSystems; };
-mapTestOn (map (flip nameValuePair all) packages);
+mapTestOn (map (lib.flip lib.nameValuePair all) packages)
