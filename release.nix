@@ -5,4 +5,4 @@
 }:
 with import "${nixpkgs}/pkgs/top-level/release-lib.nix" { inherit supportedSystems; };
 with pkgs.lib;
-mapTestOn (listToAttrs (map (flip nameValuePair all) packages))
+mapTestOn (listToAttrs (map (flip nameValuePair linux) packages))
